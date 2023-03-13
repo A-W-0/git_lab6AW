@@ -15,10 +15,14 @@ def encode(decoded_password_str):
     return encoded_password
 
 
-def decode(i):  # FIXME insert a variable
-    # placeholder for Ismael's decode function
-    return None
-    pass
+def decode(encoded_password_str):
+    decoded_password = ""
+    for digit in encoded_password_str:
+        num = int(digit) - 3
+        num += 10 if num < 0 else 0
+        decoded_password += str(num)
+    return decoded_password
+
 
 
 if __name__ == "__main__":
